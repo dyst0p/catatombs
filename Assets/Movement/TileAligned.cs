@@ -17,9 +17,10 @@ namespace CataTombs.Movement
             if (RaycastToTile.Raycast(transform.position + Vector3.up, Vector3.down, 2, transform, out RaycastHit hit))
                 tile = hit.transform.GetComponent<Tile>();
             else
-            {
                 tile = null;
-            }
+
+            if (tile != null)
+                tile.unit = gameObject;
         }
     }
 }

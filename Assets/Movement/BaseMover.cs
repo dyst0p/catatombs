@@ -37,7 +37,6 @@ namespace CataTombs.Movement
                 if (restDistance <= distanseBetweenTiles / 2)
                 {
                     tile.unit = null;
-                    targetTile.unit = gameObject;
                     tileInfo.FindTile();
                     if (restDistance < 0.001f)
                     {
