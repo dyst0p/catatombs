@@ -48,7 +48,7 @@ namespace CataTombs.Movement
             var direction = transform.forward;
             Quaternion rotation = Quaternion.Euler(0, -60, 0);
             direction = rotation * direction;
-            if (RaycastToTile.Raycast(transform.position, transform.forward, 2f, transform, out RaycastHit hit))
+            if (RaycastToTile.Raycast(transform.position, direction, 2f, transform, out RaycastHit hit))
                 targetTile = hit.transform.GetComponent<Tile>();
 
             if (targetTile == null)
@@ -64,7 +64,7 @@ namespace CataTombs.Movement
             var direction = transform.forward;
             Quaternion rotation = Quaternion.Euler(0, 60, 0);
             direction = rotation * direction;
-            if (RaycastToTile.Raycast(transform.position, transform.forward, 2f, transform, out RaycastHit hit))
+            if (RaycastToTile.Raycast(transform.position, direction, 2f, transform, out RaycastHit hit))
                 targetTile = hit.transform.GetComponent<Tile>();
 
             if (targetTile == null)
