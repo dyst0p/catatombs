@@ -49,7 +49,7 @@ namespace CataTombs.Movement
             {
                 transform.forward = Vector3.RotateTowards(transform.forward, forwardTarget,
                     rotationSpeed * Time.deltaTime, 0);
-                if (Vector3.Angle(transform.forward, forwardTarget) < 1)
+                if (Vector3.Angle(transform.forward, forwardTarget) < 0.1f)
                     transform.forward = forwardTarget;
             }
         }
