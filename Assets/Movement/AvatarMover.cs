@@ -42,33 +42,37 @@ namespace CataTombs.Movement
 
         public void StrafeLeft()
         {
-            if (transform.position != targetTile.transform.position || inRotation)
+            if (inMovement || inRotation)
                 return;
 
             var direction = transform.forward;
             Quaternion rotation = Quaternion.Euler(0, -60, 0);
             direction = rotation * direction;
             if (RaycastToTile.Raycast(transform.position, direction, 2f, transform, out RaycastHit hit))
+            {
                 targetTile = hit.transform.GetComponent<Tile>();
+                targetPosition = targetTile.transform.position;
+                inMovement = true;
+            }
 
-            if (targetTile == null)
-                return;
             TurnRight();
         }
 
         public void StrafeRight()
         {
-            if (transform.position != targetTile.transform.position || inRotation)
+            if (inMovement || inRotation)
                 return;
 
             var direction = transform.forward;
             Quaternion rotation = Quaternion.Euler(0, 60, 0);
             direction = rotation * direction;
             if (RaycastToTile.Raycast(transform.position, direction, 2f, transform, out RaycastHit hit))
+            {
                 targetTile = hit.transform.GetComponent<Tile>();
+                targetPosition = targetTile.transform.position;
+                inMovement = true;
+            }
 
-            if (targetTile == null)
-                return;
             TurnLeft();
         }
     }
