@@ -42,7 +42,7 @@ namespace CataTombs.Movement
 
         public void StrafeLeft()
         {
-            if (transform.position != targetTile.transform.position || transform.forward != forwardTarget)
+            if (transform.position != targetTile.transform.position || inRotation)
                 return;
 
             var direction = transform.forward;
@@ -58,7 +58,7 @@ namespace CataTombs.Movement
 
         public void StrafeRight()
         {
-            if (transform.position != targetTile.transform.position || transform.forward != forwardTarget)
+            if (transform.position != targetTile.transform.position || inRotation)
                 return;
 
             var direction = transform.forward;

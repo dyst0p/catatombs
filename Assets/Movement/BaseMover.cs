@@ -10,16 +10,17 @@ namespace CataTombs.Movement
 
         [SerializeField] protected float rotationSpeed;
         [SerializeField] protected float movementSpeed;
+        [SerializeField] protected bool inMovement;
+        [SerializeField] protected bool inRotation;
 
         protected Tile targetTile;
-        protected Vector3 forwardTarget;
+        protected Quaternion targetRotation;
 
         public Tile tile => tileInfo?.tile;
 
         private void Awake()
         {
             tileInfo = GetComponent<TileAligned>();
-            forwardTarget = transform.forward;
             targetTile = tile;
         }
 
@@ -45,12 +46,11 @@ namespace CataTombs.Movement
                 }
             }
 
-            if (transform.forward != forwardTarget)
+            if (inRotation)
             {
-                transform.forward = Vector3.RotateTowards(transform.forward, forwardTarget,
-                    rotationSpeed * Time.deltaTime, 0);
-                if (Vector3.Angle(transform.forward, forwardTarget) < 0.1f)
-                    transform.forward = forwardTarget;
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+                if (Quaternion.Equals(transform.rotation, targetRotation))
+                    inRotation = false;
             }
         }
 
@@ -74,20 +74,22 @@ namespace CataTombs.Movement
 
         public void TurnLeft()
         {
-            if (transform.forward != forwardTarget)
+            if (inRotation)
                 return;
 
-            Quaternion rotation = Quaternion.Euler(0, -60, 0);
-            forwardTarget = rotation * forwardTarget;
+            var angle = Mathf.Round(transform.eulerAngles.y - 60);
+            targetRotation = Quaternion.Euler(new Vector3(0, angle, 0));
+            inRotation = true;
         }
 
         public void TurnRight()
         {
-            if (transform.forward != forwardTarget)
+            if (inRotation)
                 return;
-
-            Quaternion rotation = Quaternion.Euler(0, 60, 0);
-            forwardTarget = rotation * forwardTarget;
+            
+            var angle = Mathf.Round(transform.eulerAngles.y + 60);
+            targetRotation = Quaternion.Euler(new Vector3(0, angle, 0));
+            inRotation = true;
         }
     }
 }
