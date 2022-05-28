@@ -1,36 +1,10 @@
 using CataTombs.Tiles;
 using UnityEngine;
-using static UnityEngine.InputSystem.InputAction;
 
 namespace CataTombs.Movement
 {
-    public class AvatarMover : BaseMover, IStrafable
+    public class StrafableMover : BaseMover, IStrafable
     {
-        protected float walkInput;
-        protected float turnInput;
-        protected float strafeInput;
-        protected override void Update()
-        {
-            if (walkInput > 0)
-                GoForward();
-            if (walkInput < 0)
-                GoBackward();
-            if (turnInput < 0)
-                TurnLeft();
-            if (turnInput > 0)
-                TurnRight();
-            if (strafeInput < 0)
-                StrafeLeft();
-            if (strafeInput > 0)
-                StrafeRight();
-
-            base.Update();
-        }
-
-        public void GetWalkInput(CallbackContext value) => walkInput = value.ReadValue<float>();
-        public void GetTurnInput(CallbackContext value) => turnInput = value.ReadValue<float>();
-        public void GetStrafeInput(CallbackContext value) => strafeInput = value.ReadValue<float>();
-
         public void StrafeLeft()
         {
             if (inMovement || inRotation)
