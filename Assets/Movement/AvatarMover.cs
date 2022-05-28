@@ -1,44 +1,35 @@
 using CataTombs.Tiles;
 using UnityEngine;
+using static UnityEngine.InputSystem.InputAction;
 
 namespace CataTombs.Movement
 {
     public class AvatarMover : BaseMover, IStrafable
     {
+        protected float walkInput;
+        protected float turnInput;
+        protected float strafeInput;
         protected override void Update()
         {
-            if (Input.GetKey(KeyCode.W))
+            if (walkInput > 0)
                 GoForward();
-            if (Input.GetKey(KeyCode.S))
+            if (walkInput < 0)
                 GoBackward();
-            if (Input.GetKey(KeyCode.A))
+            if (turnInput < 0)
                 TurnLeft();
-            if (Input.GetKey(KeyCode.D))
+            if (turnInput > 0)
                 TurnRight();
-            if (Input.GetKey(KeyCode.Q))
+            if (strafeInput < 0)
                 StrafeLeft();
-            if (Input.GetKey(KeyCode.E))
+            if (strafeInput > 0)
                 StrafeRight();
 
             base.Update();
         }
 
-        private void TeleportForward()
-        {
-            Debug.Log("Start teleport");
-            var direction = transform.forward;
-            var hits = Physics.RaycastAll(transform.position, direction, 2f);
-            foreach (RaycastHit hit in hits)
-            {
-                Debug.Log($"Start collider {hit.transform}");
-                if (hit.transform.gameObject != gameObject)
-                {
-                    transform.position = hit.transform.position;
-                    Debug.Log($"Collided with {hit.transform}");
-                    return;
-                }
-            }
-        }
+        public void GetWalkInput(CallbackContext value) => walkInput = value.ReadValue<float>();
+        public void GetTurnInput(CallbackContext value) => turnInput = value.ReadValue<float>();
+        public void GetStrafeInput(CallbackContext value) => strafeInput = value.ReadValue<float>();
 
         public void StrafeLeft()
         {

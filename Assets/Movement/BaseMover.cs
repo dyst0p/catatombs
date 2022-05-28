@@ -10,8 +10,8 @@ namespace CataTombs.Movement
 
         [SerializeField] protected float rotationSpeed;
         [SerializeField] protected float movementSpeed;
-        [SerializeField] protected bool inMovement;
-        [SerializeField] protected bool inRotation;
+        protected bool inMovement;
+        protected bool inRotation;
 
         protected Tile targetTile;
         protected Vector3 targetPosition;
