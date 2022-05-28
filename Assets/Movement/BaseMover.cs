@@ -58,7 +58,7 @@ namespace CataTombs.Movement
 
         public void GoForward()
         {
-            if (transform.position != targetTile.transform.position)
+            if (inMovement)
                 return;
 
             if (RaycastToTile.Raycast(transform.position, transform.forward, 2f, transform, out RaycastHit hit))
