@@ -215,6 +215,8 @@ GameObject:
   - component: {fileID: 1502051474}
   - component: {fileID: 1557137790}
   - component: {fileID: 1979342662781427021}
+  - component: {fileID: 8762276247037974924}
+  - component: {fileID: 8762276247037974923}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -370,3 +372,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 120
   movementSpeed: 3.464
+--- !u!114 &8762276247037974924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8762276246005782351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 687eff0e25ad59546a54a18b958b0fa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnHitStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHitEnd:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &8762276247037974923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8762276246005782351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d23809060ef1f9d43a78c937d8509514, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 10
+  maxHealth: 10
+  OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  OnRefullHealth:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealthEmpty:
+    m_PersistentCalls:
+      m_Calls: []
