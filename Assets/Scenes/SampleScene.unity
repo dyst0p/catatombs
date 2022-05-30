@@ -3074,6 +3074,8 @@ GameObject:
   - component: {fileID: 802935601}
   - component: {fileID: 802935600}
   - component: {fileID: 802935604}
+  - component: {fileID: 802935606}
+  - component: {fileID: 802935605}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -3171,6 +3173,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d7b10786a135641bffd115577c83e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &802935605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802935599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d23809060ef1f9d43a78c937d8509514, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 3
+  maxHealth: 3
+  OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  OnRefullHealth:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealthEmpty:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &802935606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802935599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 687eff0e25ad59546a54a18b958b0fa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnHitStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHitEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -12037,3 +12080,50 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06548153624388e4d9243e0130ac574e, type: 3}
+--- !u!1 &8762276247037974922 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8762276246005782351, guid: 06548153624388e4d9243e0130ac574e,
+    type: 3}
+  m_PrefabInstance: {fileID: 8762276247037974921}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8762276247037974923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8762276247037974922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d23809060ef1f9d43a78c937d8509514, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 10
+  maxHealth: 10
+  OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  OnRefullHealth:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealthEmpty:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &8762276247037974924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8762276247037974922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 687eff0e25ad59546a54a18b958b0fa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnHitStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHitEnd:
+    m_PersistentCalls:
+      m_Calls: []
