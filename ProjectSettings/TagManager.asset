@@ -15,9 +15,9 @@ TagManager:
   - 
   - 
   - Tile
-  - 
-  - 
-  - 
+  - HitBox
+  - DamageBox
+  - BlockBox
   - 
   - 
   - 
