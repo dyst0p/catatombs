@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace CataTombs.Movement
 {
-    public class RaycastToTile
+    public static class RaycastToTile
     {
         public static bool Raycast(Vector3 pos, Vector3 dir, float length, Transform caster, out RaycastHit hit)
         {
