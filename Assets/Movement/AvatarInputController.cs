@@ -1,11 +1,13 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.InputAction;
 
 namespace CataTombs.Movement
 {
-    public class AvatarMoveController : MonoBehaviour
+    public class AvatarInputController : MonoBehaviour
     {
         protected StrafableMover moveProvider;
+        [SerializeField] protected Animator rightHand;
 
         protected float walkInput;
         protected float turnInput;
@@ -32,8 +34,14 @@ namespace CataTombs.Movement
                 moveProvider.StrafeRight();
         }
 
-        public void GetWalkInput(CallbackContext value) => walkInput = value.ReadValue<float>();
-        public void GetTurnInput(CallbackContext value) => turnInput = value.ReadValue<float>();
-        public void GetStrafeInput(CallbackContext value) => strafeInput = value.ReadValue<float>();
+        public void GetWalkInput(CallbackContext context) => walkInput = context.ReadValue<float>();
+        public void GetTurnInput(CallbackContext context) => turnInput = context.ReadValue<float>();
+        public void GetStrafeInput(CallbackContext context) => strafeInput = context.ReadValue<float>();
+
+        public void GetRightPunchInput(CallbackContext context)
+        {
+            if (context.phase == InputActionPhase.Performed)
+                rightHand.SetTrigger("Punch");
+        }
     }
 }
