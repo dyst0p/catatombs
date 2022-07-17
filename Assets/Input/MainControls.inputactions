@@ -38,7 +38,7 @@
                     "id": "8e32fb5a-65db-43d9-9d35-4caeadb0365b",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press(behavior=1)",
                     "initialStateCheck": false
                 }
             ],
@@ -309,8 +309,8 @@
                 },
                 {
                     "name": "",
-                    "id": "16c1d419-7250-4a7b-a40e-3607f2dc839a",
-                    "path": "<Mouse>/rightButton",
+                    "id": "d3e1eea2-9acb-4b2c-9034-8423a9d97207",
+                    "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -320,8 +320,8 @@
                 },
                 {
                     "name": "",
-                    "id": "d3e1eea2-9acb-4b2c-9034-8423a9d97207",
-                    "path": "<Gamepad>/rightTrigger",
+                    "id": "e25410c3-221d-413f-ac30-fc60154fc2ca",
+                    "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
