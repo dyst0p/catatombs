@@ -11870,16 +11870,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
-    - target: {fileID: 4353052670888460440, guid: 45ef8651d7a045140827525e1cfcbbaa,
-        type: 3}
-      propertyPath: maxHealth
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4353052670888460440, guid: 45ef8651d7a045140827525e1cfcbbaa,
-        type: 3}
-      propertyPath: currentHealth
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 4353052670888460446, guid: 45ef8651d7a045140827525e1cfcbbaa,
         type: 3}
       propertyPath: m_RootOrder
