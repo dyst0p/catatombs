@@ -8,6 +8,7 @@ namespace CataTombs.Movement
     {
         protected StrafableMover moveProvider;
         [SerializeField] protected Animator rightHand;
+        [SerializeField] protected Animator leftHand;
 
         protected float walkInput;
         protected float turnInput;
@@ -42,6 +43,12 @@ namespace CataTombs.Movement
         {
             if (context.phase == InputActionPhase.Performed)
                 rightHand.SetTrigger("Punch");
+        }
+        
+        public void GetLeftPunchInput(CallbackContext context)
+        {
+            if (context.phase == InputActionPhase.Performed)
+                leftHand.SetTrigger("Punch");
         }
     }
 }

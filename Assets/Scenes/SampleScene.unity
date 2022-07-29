@@ -11436,24 +11436,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2109731487}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2117033777 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 352309736, guid: 06548153624388e4d9243e0130ac574e,
-    type: 3}
-  m_PrefabInstance: {fileID: 8762276247037974921}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2117033779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2117033777}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4136fa1f40665b439c9a5c2ef89b326, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!43 &2119203315
 Mesh:
   m_ObjectHideFlags: 0
@@ -11888,6 +11870,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 4353052670888460440, guid: 45ef8651d7a045140827525e1cfcbbaa,
+        type: 3}
+      propertyPath: maxHealth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353052670888460440, guid: 45ef8651d7a045140827525e1cfcbbaa,
+        type: 3}
+      propertyPath: currentHealth
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 4353052670888460446, guid: 45ef8651d7a045140827525e1cfcbbaa,
         type: 3}
       propertyPath: m_RootOrder
@@ -11952,10 +11944,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1979840990, guid: 06548153624388e4d9243e0130ac574e, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.7
-      objectReference: {fileID: 0}
     - target: {fileID: 8762276246005782339, guid: 06548153624388e4d9243e0130ac574e,
         type: 3}
       propertyPath: m_RootOrder

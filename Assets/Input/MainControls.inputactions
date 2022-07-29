@@ -40,6 +40,15 @@
                     "processors": "",
                     "interactions": "Press(behavior=1)",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Left Hand Punch",
+                    "type": "Button",
+                    "id": "b796518e-98f6-43eb-951b-0648e6034670",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=1)",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -326,6 +335,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Right Hand Punch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "59e4fef2-6033-428c-b01b-f49c35b8f0b9",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Left Hand Punch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d929f0fc-2ae1-43a2-b408-9b346c1d13e8",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Left Hand Punch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
